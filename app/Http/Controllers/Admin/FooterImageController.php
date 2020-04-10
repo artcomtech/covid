@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\File;
 
 use App\Model\Post;
 
-class InfografikController extends Controller
+class FooterImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,9 +22,9 @@ class InfografikController extends Controller
      */
     public function index()
     {
-        $title = 'Data Inforgrafik';
-        $data = Post::where('parent','infografik')->get();
-        return view('admin.infografik.index',['title'=>$title,'data'=>$data]);
+        $title = 'Data Footer Image';
+        $data = Post::where('parent','footer')->get();
+        return view('admin.footerimage.index',['title'=>$title,'data'=>$data]);
     }
 
     /**
@@ -45,26 +45,26 @@ class InfografikController extends Controller
      */
     public function store(Request $request)
     {
-        $infografik = new Post();
-        $infografik->parent = 'infografik';
-        $infografik->subparent = '';
-        $infografik->title = $request->title;
+       $footer = new Post();
+       $footer->parent = 'footer';
+       $footer->title = $request->title;
+       $footer->others = $request->link;
         $image = $request->file('file');
-        $input['file'] = time().'.jpg';
+        $input['file'] = time().'.webp';
      
         $destinationPath = public_path('/images/post');
         $img = Image::make($image->path());
         $img->resize(null, 200, function ($constraint) {
             $constraint->aspectRatio();
-        })->encode('jpg', 50)->save($destinationPath.'/'.$input['file']);
+        })->encode('webp', 50)->save($destinationPath.'/'.$input['file']);
    
         $destinationPath = public_path('/images/post');
         $image->move($destinationPath, $input['file']);
 
-       $infografik->file =  $input['file'];
-       $infografik->save();
+       $footer->file =  $input['file'];
+       $footer->save();
 
-        return redirect()->intended(url('admin/infografik'))->with('success','Infografik berhasil ditambahkan');
+        return redirect()->intended(url('admin/footerimage'))->with('success','Image Footer berhasil ditambahkan');
     }
 
     /**
@@ -115,6 +115,6 @@ class InfografikController extends Controller
             \File::delete(public_path('images/post/'.$dtpost->file));
         }
         $delete = Post::where('id', $id)->delete();
-        return redirect()->intended(url('admin/infografik'))->with('success','Infografik berhasil dihapus');
+        return redirect()->intended(url('admin/footerimage'))->with('success','Image Footer berhasil dihapus');
     }
 }

@@ -3,7 +3,7 @@
     <a href="index3.html" class="brand-link">
       <img src="{{asset('adminlte/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Covid 19 LAMBAR</span>
     </a>
 
     <!-- Sidebar -->
@@ -14,7 +14,7 @@
           <img src="{{asset('adminlte/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+        <a href="#" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -65,14 +65,28 @@
             </a>
            
           </li>
-          <li class="nav-item">
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-cog"></i>
               <p>
                 Pengaturan
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-           
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/footerimage')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Footer Image</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/kontak')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kontak</p>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>

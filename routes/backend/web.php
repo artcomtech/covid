@@ -28,4 +28,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('covid','Admin\CovidController');
 
     Route::resource('infografik','Admin\InfografikController');
+
+    Route::resource('footerimage','Admin\FooterImageController');
+
+    Route::resource('kontak','Admin\KontakController');
 });
