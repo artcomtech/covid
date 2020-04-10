@@ -1,0 +1,47 @@
+// Your custom skin
+// Skins
+$skins: () !default;
+$skins: map-merge(
+  (
+    "test": (
+      "skin-primary-color":      #fff,
+      "skin-navbar":             #fff,
+      "skin-footer-color":       #fff,
+      "skin-flat":               #fff,
+      "skin-accent":             #fff,
+      "skin-sidenav-item":       #fff,
+      "skin-sidenav-item-hover": #fff,
+      "skin-gradient-start":     #fff,
+      "skin-gradient-end":       #fff,
+      "skin-mask-slight":        #fff,
+      "skin-mask-light":         #fff,
+      "skin-mask-strong":        #fff,
+      "skin-sn-child":           #fff,
+      "skin-btn-primary":        #fff,
+      "skin-btn-secondary":      #fff,
+      "skin-btn-default":        #fff,
+      "skin-text":               #fff
+    ),
+    "siapm": (
+      "skin-primary-color":      #c0392b,
+      "skin-navbar":             #535466,
+      "skin-footer-color":       #535466,
+      "skin-accent":             #9fa0ae,
+      "skin-flat":               #99392f,
+      "skin-sidenav-item":       rgba(0, 0, 0, .4),
+      "skin-sidenav-item-hover": rgba(0, 0, 0, .4),
+      "skin-gradient-start":     #cb2d3e,
+      "skin-gradient-end":       #ef473a,
+      "skin-mask-slight":        rgba(192, 57, 43, .5),
+      "skin-mask-light":         rgba(192, 57, 43, .65),
+      "skin-mask-strong":        rgba(192, 57, 43, .8),
+      "skin-sn-child":           #ffb0e6,
+      "skin-btn-primary":        #aa2e3b,
+      "skin-btn-secondary":      #e7649d,
+      "skin-btn-default":        #535466,
+      "skin-text":               $white
+    )
+  ),
+  $skins
+);
+
