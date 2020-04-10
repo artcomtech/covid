@@ -104,7 +104,7 @@
   $(function () {
     // Summernote
     $('.textarea').summernote({
-      height: 200
+      height: 250
     });
   });
 </script>

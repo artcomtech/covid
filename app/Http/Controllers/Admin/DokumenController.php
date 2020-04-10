@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Model\Post;
-
-class BeritaController extends Controller
+class DokumenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $footer = Post::where('parent','footer')->get();
-        $dtberita = Post::where('parent','berita')->where('others','publish')->get();
-        return view('/pages/berita/index',['berita'=>$dtberita,'footer'=>$footer]);
-        
+        //
     }
 
     /**
@@ -51,13 +46,7 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        $footer = Post::where('parent','footer')->get();
-        $berita = Post::where('slug', $id)->first();
-        if($berita){
-            return view('/pages/berita/view',['berita'=>$berita,'footer'=>$footer]);
-        }else{
-            return abort(404);
-        }
+        //
     }
 
     /**

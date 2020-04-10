@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Model\Covid;
+
 class DashboardController extends Controller
 {
     /**
@@ -15,7 +17,8 @@ class DashboardController extends Controller
     public function index()
     {
         $title = 'Dashboard Admin';
-        return view('admin.dashboard.index',['title'=>$title]);
+        $dtcovid = Covid::first();
+        return view('admin.dashboard.index',['title'=>$title,'covid'=>$dtcovid]);
     }
 
     /**

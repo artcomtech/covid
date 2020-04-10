@@ -13,7 +13,7 @@
                     <a class="btn btn-sm btn-danger waves-effect btn-icon-text">
                         <i class="fas fa-phone btn-icon-prepend fa-2x pr-3"></i>
                         <span class="d-inline-block text-left">
-                            <small class="d-block">Call Center</small> {{$kontak->others}}
+                            <small class="d-block">Call Center</small> {{empty($kontak->others)?'':$kontak->others}}
                         </span>
                     </a>
                 </div>
@@ -69,7 +69,7 @@
                                       </div>
                                       <div class="card-body">
                                         <h5 class="card-title">{{$covid->rawat_rs + $covid->rawat_rumah + $covid->rawat_sembuh}}</h5>
-                                        <p class="card-text text-secondary">Total ODP</p>
+                                        <p class="card-text text-secondary">Total PDP</p>
                                       </div>
                                       <div class="card-footer text-muted p-0">
                                         <table class="table table-bordered m-0">
@@ -100,7 +100,7 @@
                                       </div>
                                       <div class="card-body">
                                         <h5 class="card-title">160</h5>
-                                        <p class="card-text text-secondary">Total ODP</p>
+                                        <p class="card-text text-secondary">Total Kasus Terkonfirmasi COVID-19</p>
                                       </div>
                                       <div class="card-footer text-muted p-0">
                                         <table class="table table-bordered m-0">

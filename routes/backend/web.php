@@ -29,6 +29,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::resource('infografik','Admin\InfografikController');
 
+    Route::resource('pers','Admin\PersController');
+
     Route::resource('footerimage','Admin\FooterImageController');
 
     Route::resource('kontak','Admin\KontakController');
