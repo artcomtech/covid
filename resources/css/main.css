@@ -2095,16 +2095,49 @@ fieldset:disabled a.btn {
 /* line 53, node_modules/bootstrap/scss/mixins/_buttons.scss */
 
 /* line 62, node_modules/bootstrap/scss/_buttons.scss */
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
 
 /* line 13, node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-success:hover {
+  color: #fff;
+  background-color: #218838;
+  border-color: #1e7e34;
+}
 
 /* line 18, node_modules/bootstrap/scss/mixins/_buttons.scss */
+.btn-success:focus, .btn-success.focus {
+  color: #fff;
+  background-color: #218838;
+  border-color: #1e7e34;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
 
 /* line 32, node_modules/bootstrap/scss/mixins/_buttons.scss */
+.btn-success.disabled, .btn-success:disabled {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
 
 /* line 43, node_modules/bootstrap/scss/mixins/_buttons.scss */
+.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+  color: #fff;
+  background-color: #1e7e34;
+  border-color: #1c7430;
+}
 
 /* line 53, node_modules/bootstrap/scss/mixins/_buttons.scss */
+.btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
 
 /* line 62, node_modules/bootstrap/scss/_buttons.scss */
 
@@ -6537,6 +6570,9 @@ a.close.disabled {
 /* line 41, node_modules/bootstrap/scss/utilities/_text.scss */
 
 /* line 45, node_modules/bootstrap/scss/utilities/_text.scss */
+.text-white {
+  color: #fff !important;
+}
 
 /* line 6, node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
 .text-primary {
@@ -6579,14 +6615,8 @@ a.text-info:hover, a.text-info:focus {
 }
 
 /* line 6, node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
-.text-warning {
-  color: #ffc107 !important;
-}
 
 /* line 17, node_modules/bootstrap/scss/mixins/_hover.scss */
-a.text-warning:hover, a.text-warning:focus {
-  color: #ba8b00 !important;
-}
 
 /* line 6, node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
 .text-danger {
@@ -9705,6 +9735,9 @@ readers do not read off random characters that represent icons */
 /* line 1367, node_modules/@fortawesome/fontawesome-free/scss/_icons.scss */
 
 /* line 1368, node_modules/@fortawesome/fontawesome-free/scss/_icons.scss */
+.fa-whatsapp:before {
+  content: "\f232";
+}
 
 /* line 1369, node_modules/@fortawesome/fontawesome-free/scss/_icons.scss */
 
@@ -10758,6 +10791,10 @@ readers do not read off random characters that represent icons */
 /* line 1403, node_modules/@fortawesome/fontawesome-free/scss/_shims.scss */
 
 /* line 1408, node_modules/@fortawesome/fontawesome-free/scss/_shims.scss */
+.fa.fa-whatsapp {
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 400;
+}
 
 /* line 1413, node_modules/@fortawesome/fontawesome-free/scss/_shims.scss */
 
@@ -12396,14 +12433,8 @@ a.text-danger:hover, a.text-danger:focus {
 }
 
 /* line 132, src/assets/scss/core/_mixins.scss */
-.text-warning {
-  color: #fb3 !important;
-}
 
 /* line 110, src/assets/scss/core/_mixins.scss */
-a.text-warning:hover, a.text-warning:focus {
-  color: #ffaa00 !important;
-}
 
 /* line 132, src/assets/scss/core/_mixins.scss */
 .text-success {
@@ -15500,20 +15531,52 @@ a.btn:not([href]):not([tabindex]):hover {
 /* line 394, src/assets/scss/core/_mixins.scss */
 
 /* line 299, src/assets/scss/core/_mixins.scss */
+.btn-success {
+  color: #fff;
+  background-color: #00c851 !important;
+}
 
 /* line 303, src/assets/scss/core/_mixins.scss */
+.btn-success:hover {
+  color: #fff;
+  background-color: #00e25b;
+}
 
 /* line 308, src/assets/scss/core/_mixins.scss */
+.btn-success:focus, .btn-success.focus {
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
 
 /* line 313, src/assets/scss/core/_mixins.scss */
+.btn-success:focus, .btn-success:active, .btn-success.active {
+  background-color: #006228;
+}
 
 /* line 319, src/assets/scss/core/_mixins.scss */
+.btn-success.dropdown-toggle {
+  background-color: #00c851 !important;
+}
 
 /* line 322, src/assets/scss/core/_mixins.scss */
+.btn-success.dropdown-toggle:hover, .btn-success.dropdown-toggle:focus {
+  background-color: #00e25b !important;
+}
 
 /* line 328, src/assets/scss/core/_mixins.scss */
+.btn-success:not([disabled]):not(.disabled):active, .btn-success:not([disabled]):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+  background-color: #006228 !important;
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
 
 /* line 335, src/assets/scss/core/_mixins.scss */
+.btn-success:not([disabled]):not(.disabled):active:focus, .btn-success:not([disabled]):not(.disabled).active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
 
 /* line 342, src/assets/scss/core/_mixins.scss */
 
@@ -15527,6 +15590,9 @@ a.btn:not([href]):not([tabindex]):hover {
 }
 
 /* line 360, src/assets/scss/core/_mixins.scss */
+table.table a.btn.btn-success {
+  color: #fff;
+}
 
 /* line 371, src/assets/scss/core/_mixins.scss */
 

@@ -19,7 +19,7 @@ class IndexController extends Controller
     if(!empty($dtcovid)){
         $covid = $dtcovid;
     }else{
-        $covid = '';
+        $covid = NULL;
     }
     $dtberita = Post::where('parent','berita')->where('others','publish')->offset(0)->limit(5)->get();
     $berita = Post::where('parent','berita')->where('others','publish')->first();
