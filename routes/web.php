@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Frontend\IndexController@index')->name('beranda');
+
+Route::get('/faq', 'Frontend\FaqController@index')->name('faq');
+Route::resource('berita','Frontend\BeritaController',['only' => ['index','show']]);
