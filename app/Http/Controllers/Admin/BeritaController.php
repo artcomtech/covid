@@ -52,7 +52,7 @@ class BeritaController extends Controller
         $berita->title = $request->title;
         $berita->content = $request->content;
         $berita->description = $request->description;
-        $berita->others = $request->others;
+        $berita->others = $request->status;
         $image = $request->file('file');
         $input['file'] = time().'.webp';
      
@@ -68,7 +68,7 @@ class BeritaController extends Controller
         $berita->file =  $input['file'];
         $berita->save();
 
-        return redirect()->intended(url('admin.berita'))->with('success','Berita berhasil ditembahkan');
+        return redirect()->intended(url('admin/berita'))->with('success','Berita berhasil ditambahkan');
     }
 
     /**
@@ -90,7 +90,9 @@ class BeritaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = 'Form Edit Berita';
+        $data = Post::find($id);
+        return view('admin.berita.edit',['title'=>$title,'data'=>$data]);
     }
 
     /**
@@ -102,7 +104,35 @@ class BeritaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $berita =Post::find($id);
+        $berita->parent = 'berita';
+        $berita->subparent = '';
+        $berita->title = $request->title;
+        $berita->content = $request->content;
+        $berita->description = $request->description;
+        $berita->others = $request->status;
+        if(!empty($request->file('file'))){
+            if(\File::exists(public_path('images/post/'.$berita->file))){
+
+                \File::delete(public_path('images/post/'.$berita->file));
+            }
+            $image = $request->file('file');
+            $input['file'] = time().'.webp';
+         
+            $destinationPath = public_path('/images/post');
+            $img = Image::make($image->path());
+            $img->resize(null, 200, function ($constraint) {
+                $constraint->aspectRatio();
+            })->encode('webp', 50)->save($destinationPath.'/'.$input['file']);
+       
+            $destinationPath = public_path('/images/post');
+            $image->move($destinationPath, $input['file']);
+            $berita->file =  $input['file'];
+        }
+    
+        $berita->save();
+
+        return redirect()->intended(url('admin/berita'))->with('success','Berita berhasil diperbarui');
     }
 
     /**
@@ -113,6 +143,12 @@ class BeritaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dtpost = Post::find($id);
+        if(\File::exists(public_path('images/post/'.$dtpost->file))){
+
+            \File::delete(public_path('images/post/'.$dtpost->file));
+        }
+        $delete = Post::where('id', $id)->delete();
+        return redirect()->intended(url('admin/berita'))->with('success','Berita berhasil dihapus');
     }
 }

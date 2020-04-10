@@ -22,4 +22,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard','Admin\DashboardController@index');
 
     Route::resource('berita','Admin\BeritaController');
+
+    Route::resource('tentang','Admin\TentangController');
+
+    Route::resource('covid','Admin\CovidController');
+
+    Route::resource('infografik','Admin\InfografikController');
 });

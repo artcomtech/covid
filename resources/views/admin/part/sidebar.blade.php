@@ -40,12 +40,30 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+            <a href="{{url('admin/tentang')}}" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
               <p>
                 Tentang Covid 19
               </p>
             </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('admin/covid')}}" class="nav-link">
+              <i class="nav-icon fas fa-chart-bar"></i>
+              <p>
+                Data Covid
+              </p>
+            </a>
+           
+          </li>
+          <li class="nav-item">
+            <a href="{{url('admin/infografik')}}" class="nav-link">
+              <i class="nav-icon fas fa-images"></i>
+              <p>
+                InfoGrafik
+              </p>
+            </a>
+           
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">

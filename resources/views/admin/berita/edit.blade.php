@@ -30,40 +30,44 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" method="POST" action="{{url('admin/berita')}}" enctype="multipart/form-data">
+                <form role="form" method="POST" action="{{url('admin/berita/'.$data->id)}}" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                {{ method_field('PUT') }}
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Judul</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Judul Berita" name="title" required>
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Judul Berita" value="{{$data->title}}" name="title" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Isi Berita</label>
                                 <textarea class="textarea" placeholder="Place some text here"
-                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" name="content" required></textarea>
+                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" name="content" required>{{$data->content}}</textarea>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Deskripsi Singkat</label>
-                                <textarea class="form-control" placeholder="Deskripsi Singkat" rows="4" name="description" required></textarea>
+                                <textarea class="form-control" placeholder="Deskripsi Singkat" rows="4" name="description" required>{{$data->description}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Status</label>
                                 <div class="custom-control custom-radio">
-                                    <input class="custom-control-input" type="radio" id="customRadio1" name="status" value="Publish">
+                                    <input class="custom-control-input" type="radio" id="customRadio1" name="status" value="Publish" {{$data->others=="Publish"?'checked':''}}>
                                     <label for="customRadio1" class="custom-control-label">Publish</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input class="custom-control-input" type="radio" id="customRadio2" name="status" value="Draft" checked>
+                                    <input class="custom-control-input" type="radio" id="customRadio2" name="status" value="Draft" {{$data->others=="Draft"?'checked':''}}>
                                     <label for="customRadio2" class="custom-control-label">Draft</label>
                                 </div>
                             </div>
                             <div class="form-group">
+                                <img src="{{asset('images/post/'.$data->file)}}" class="img-rounded" style="width:100%; display:block"><br>
                                 <label for="exampleInputFile">Gambar</label>
+
                                 <div class="input-group">
+                                   
                                     <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="exampleInputFile" name="file">
                                     <label class="custom-file-label" for="exampleInputFile">Choose file</label>
