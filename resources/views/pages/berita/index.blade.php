@@ -3,11 +3,11 @@
 @section('title', 'Berita')
 
 @section('content')
-<section class="main-content">
+<section class="main-content section">
   <div class="container">
     <div class="page-head row mb-3">
       <div class="col-12  align-self-end">
-        <h1 class="h1-responsive">@yield('title') Pekon</h1>
+        <h1 class="h1-responsive">@yield('title')</h1>
         <div class="breadcrumb-r">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -49,7 +49,7 @@
             </article>
           </div>
           @endforeach
-         
+
         </div>
         {{-- <hr class="mt-3">
         <div class="row justify-content-center mt-3 mb-4">
