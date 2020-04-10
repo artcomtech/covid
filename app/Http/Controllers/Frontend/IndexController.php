@@ -16,9 +16,24 @@ class IndexController extends Controller
     
     $footer = Post::where('parent','footer')->get();
     $dtcovid = Covid::first();
-    $dtberita = Post::where('parent','berita')->where('others','publish')->get();
+    if(!empty($dtcovid)){
+        $covid = $dtcovid;
+    }else{
+        $covid = '';
+    }
+    $dtberita = Post::where('parent','berita')->where('others','publish')->offset(0)->limit(5)->get();
     $berita = Post::where('parent','berita')->where('others','publish')->first();
+    if(!empty($berita)){
+        $beritasingle = $berita;
+    }else{
+        $beritasingle = '';
+    }
     $kontak = Post::where('parent','kontak')->where('title','callcenter')->first();
-    return view('/pages/index',['covid'=>$dtcovid,'berita'=>$dtberita,'singleberita'=>$berita,'kontak'=>$kontak,'footer'=>$footer]);
+    if(!empty($kontak)){
+        $kontaksingle = $kontak;
+    }else{
+        $kontaksingle = '';
+    }
+    return view('/pages/index',['covid'=>$covid,'berita'=>$dtberita,'singleberita'=>$beritasingle,'kontak'=>$kontaksingle,'footer'=>$footer]);
     }
 }

@@ -51,42 +51,35 @@
           @endforeach
          
         </div>
-        {{-- <hr class="mt-3">
-        <div class="row justify-content-center mt-3 mb-4">
+        
+        <hr class="mt-3">
+        {{-- <div class="row justify-content-center mt-3 mb-4">
           <nav class="mb-4">
             <ul class="pagination pagination-circle pagination-primary-color mb-0">
               <li class="page-item disabled clearfix d-none d-md-block">
-                <a class="page-link waves-effect waves-effect">First</a>
+                <a href="{{$berita->first_page_url}}" class="page-link waves-effect waves-effect">First</a>
               </li>
               <li class="page-item disabled">
-                <a class="page-link waves-effect waves-effect" aria-label="Previous">
+                <a href="{{$berita->prev_page_url}}" class="page-link waves-effect waves-effect" aria-label="Previous">
                   <span aria-hidden="true">«</span>
                   <span class="sr-only">Previous</span>
                 </a>
               </li>
-              <li class="page-item active">
-                <a class="page-link waves-effect waves-effect">1</a>
+              @for ($i = 1; $i <= $berita->last_page; $i++)
+              <li class="page-item {{\Request::get('page')==$i?'active':''}}">
+                <a class="page-link waves-effect waves-effect">{{$i}}</a>
               </li>
+              @endfor
+             
+            
               <li class="page-item">
-                <a class="page-link waves-effect waves-effect">2</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link waves-effect waves-effect">3</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link waves-effect waves-effect">4</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link waves-effect waves-effect">5</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link waves-effect waves-effect" aria-label="Next">
+                <a href="{{$berita->ext_page_url}}" class="page-link waves-effect waves-effect" aria-label="Next">
                   <span aria-hidden="true">»</span>
                   <span class="sr-only">Next</span>
                 </a>
               </li>
               <li class="page-item clearfix d-none d-md-block">
-                <a class="page-link waves-effect waves-effect">Last</a>
+                <a href="{{$berita->last_page_url}}" class="page-link waves-effect waves-effect">Last</a>
               </li>
             </ul>
           </nav>
