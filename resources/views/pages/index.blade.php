@@ -21,7 +21,7 @@
                     <div class="wow fadeIn">
                         <div class="p-0">
                             <div class="row mx-0 wow zoomIn">
-                                
+
                                 <div class="col-12 col-md-12 mx-auto mb-3 mt-3">
                                     <div class="card text-center">
                                       <div class="card-header secondary-color">
@@ -31,7 +31,7 @@
                                         <h5 class="card-title">{{$covid->jml_otg}}</h5>
                                         <p class="card-text text-secondary">Total OTG</p>
                                       </div>
-                                    
+
                                     </div>
                                   </div>
 
@@ -175,7 +175,7 @@
             </div>
           </div>
            @endforeach
-           
+
 
           </div>
         </div>
@@ -193,7 +193,7 @@
                         @endphp
                          <p class="text-center w-100">Update Terakhir : {{\Carbon\Carbon::parse($covid->updated_at)->format('d F Y H:i')}} WIB *Data dapat berubah sewaktu-waktu
                         </p>
-               
+
                 <div class=" wow fadeIn ">
                     <div class="p-0">
                         <div class="row mx-0 wow zoomIn text-center">
@@ -242,6 +242,29 @@
                 <h2 class="text-center font-weight-bold mb-4 pb-2 text-primary wow fadeIn "> <a
                         href="statistiksiapm.html">Data
                         COVID-19 di Indonesia</a></h2>
+                <div class=" wow fadeIn ">
+                    <div class="p-0">
+                        <div class="row mx-0 wow zoomIn text-center">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item"
+                                    src="https://inacovid19.maps.arcgis.com/apps/opsdashboard/index.html#/4411f5e9c69d4ca4be31ac805a0267be"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="section bg-gray">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12">
+                <h2 class="text-center font-weight-bold mb-4 pb-2 text-primary wow fadeIn "> <a
+                        href="statistiksiapm.html">
+                    Konsultasi Digital Gratis </a></h2>
                 <div class=" wow fadeIn ">
                     <div class="p-0">
                         <div class="row mx-0 wow zoomIn text-center">
