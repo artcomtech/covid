@@ -3,7 +3,7 @@
 @section('title', 'Pertanyaan Yang sering diajukan')
 
 @section('content')
-<section class="main-content">
+<section class="main-content section">
   <div class="container">
     <div class="page-head row mb-3">
       <div class="col-12  align-self-end">
