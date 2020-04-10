@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Model\Post;
+
 class BeritaController extends Controller
 {
     /**
@@ -14,7 +16,9 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        return view('/pages/berita/index');
+        $footer = Post::where('parent','footer')->get();
+        $dtberita = Post::where('parent','berita')->where('others','publish')->get();
+        return view('/pages/berita/index',['berita'=>$dtberita,'footer'=>$footer]);
     }
 
     /**
@@ -46,7 +50,9 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        return view('/pages/berita/view');
+        $footer = Post::where('parent','footer')->get();
+        $berita = Post::where('slug', $id)->first();
+        return view('/pages/berita/view',['berita'=>$berita,'footer'=>$footer]);
     }
 
     /**

@@ -14,4 +14,6 @@
 Route::get('/', 'Frontend\IndexController@index')->name('beranda');
 
 Route::get('/faq', 'Frontend\FaqController@index')->name('faq');
-Route::resource('berita','Frontend\BeritaController',['only' => ['index','show']]);
+
+Route::get('berita','Frontend\BeritaController@index')->name('beritafront.index');
+Route::get('berita/{berita}','Frontend\BeritaController@show')->name('beritafront.detail');

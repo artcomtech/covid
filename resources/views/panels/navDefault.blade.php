@@ -11,26 +11,26 @@
       </button>
       <div class="collapse navbar-collapse" id="basicExampleNav">
         <ul class="navbar-nav ml-auto mr-3">
-          <li class="nav-item active">
+          <li class="nav-item {{empty(Request::segment(1))?'active':''}}">
             <a class="nav-link" href="{{url('/')}}">Beranda</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('berita.index')}}" >Berita</a>
+          <li class="nav-item {{Request::segment(1)=="berita"?'active':''}}">
+            <a class="nav-link" href="{{route('beritafront.index')}}" >Berita</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="galeri.html" >Infografis</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="faq.html" >FAQ</a>
+          <li class="nav-item {{Request::segment(1)=="faq"?'active':''}}">
+            <a class="nav-link" href="{{url('/faq')}}" >FAQ</a>
           </li>
 
         </ul>
 
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a href="https://mdbootstrap.com/docs/jquery/newsletter/"
+            <a href=""
               class="btn btn-danger btn-sm waves-effect rounded waves-effect mr-2" target="_blank">
-              <i class="fas fa-phone mr-1"></i> Call Center
+              <i class="fas fa-phone mr-1"></i> Call Center 
             </a>
           </li>
         </ul>

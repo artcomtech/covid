@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Model\Post;
+
 class FaqController extends Controller
 {
     /**
@@ -14,7 +16,9 @@ class FaqController extends Controller
      */
     public function index()
     {
-        return view('/pages/faq/index');
+        $footer = Post::where('parent','footer')->get();
+        $faq = Post::where('subparent','faq')->where('others','Publish')->get();
+        return view('/pages/faq/index',['faq'=>$faq,'footer'=>$footer]);
     }
 
     /**
