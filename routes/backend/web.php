@@ -13,10 +13,11 @@
 
 
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::get('/logout', 'Auth\LoginController@logout');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::group(['middleware' => 'auth'], function() {
+
+    Route::get('/logout', 'Auth\LoginController@logout');
 
     Route::get('/','Admin\DashboardController@index');
     Route::get('/dashboard','Admin\DashboardController@index');

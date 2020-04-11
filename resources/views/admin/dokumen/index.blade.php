@@ -22,6 +22,15 @@
         <strong>{{ $message }}</strong>
         </div>
       @endif
+      @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+  @endif
       <!-- Main content -->
       <section class="content">
         <div class="row">
@@ -89,7 +98,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">File (Pdf) </label>
-                        <input type="file" class="form-control" name="file">
+                        <input type="file" class="form-control" name="file" >
                     </div>
                 </div>
                 <!-- /.card-body -->

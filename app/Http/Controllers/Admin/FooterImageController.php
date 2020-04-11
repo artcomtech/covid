@@ -45,6 +45,15 @@ class FooterImageController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'file' => 'required|file|image|mimes:jpeg,png,jpg,PNG,JPEG,JPG|max:4048'
+          ], [
+            'title.required' => 'Judul tidak boleh kosong',
+            'file.image'    => 'File harus gambar',
+            'file.mimes'    => 'File extensi JPEG, JPG, PNG yang diizinkan'
+        ]);
+        
        $footer = new Post();
        $footer->parent = 'footer';
        $footer->title = $request->title;

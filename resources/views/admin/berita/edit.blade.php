@@ -16,7 +16,15 @@
           </div>
         </div><!-- /.container-fluid -->
       </section>
-  
+      @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+      @endif
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
@@ -29,6 +37,7 @@
                   <h3 class="card-title">Form Edit Berita</h3>
                 </div>
                 <!-- /.card-header -->
+                
                 <!-- form start -->
                 <form role="form" method="POST" action="{{url('admin/berita/'.$data->id)}}" enctype="multipart/form-data">
                 {{ csrf_field() }}

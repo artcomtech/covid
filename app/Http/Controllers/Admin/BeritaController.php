@@ -46,6 +46,16 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'file' => 'required|file|image|mimes:jpeg,png,jpg,PNG,JPEG,JPG|max:4048'
+          ], [
+            'title.required' => 'Judul tidak boleh kosong',
+            'file.mimes'    => 'File extensi JPEG, JPG, PNG yang diizinkan'
+          ]);
+
         $berita = new Post();
         $berita->parent = 'berita';
         $berita->subparent = '';
@@ -104,6 +114,16 @@ class BeritaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'file' => 'required|file|image|mimes:jpeg,png,jpg,PNG,JPEG,JPG|max:4048'
+          ], [
+            'title.required' => 'Judul tidak boleh kosong',
+            'file.mimes'    => 'File extensi JPEG, JPG, PNG yang diizinkan'
+          ]);
+
+
         $berita =Post::find($id);
         $berita->parent = 'berita';
         $berita->subparent = '';

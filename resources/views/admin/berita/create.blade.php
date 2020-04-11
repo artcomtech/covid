@@ -29,6 +29,15 @@
                   <h3 class="card-title">Form Berita</h3>
                 </div>
                 <!-- /.card-header -->
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <!-- form start -->
                 <form role="form" method="POST" action="{{url('admin/berita')}}" enctype="multipart/form-data">
                 {{ csrf_field() }}

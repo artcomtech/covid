@@ -62,7 +62,7 @@ class LoginController extends Controller
 
       Auth::logout();
       return redirect()
-          ->intended(url('login'))
+          ->intended(url('/'))
           ->with('status','Admin has been logged out!');
     }
 }

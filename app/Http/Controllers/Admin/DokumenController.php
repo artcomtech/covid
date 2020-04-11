@@ -39,6 +39,13 @@ class DokumenController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'file' => 'required|file|mimes:application/pdf, application/x-pdf,application/acrobat, applications/vnd.pdf, text/pdf, text/x-pdf||max:4048'
+          ], [
+            'file.mimes'    => 'File extensi pdf yang diizinkan'
+          ]);
+
         $dokumen = new Post();
         $dokumen->parent = 'dokumen';
         $dokumen->subparent = '';
