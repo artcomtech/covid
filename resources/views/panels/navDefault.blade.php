@@ -20,7 +20,7 @@
                     <li class="nav-item {{Request::segment(1)=="berita"?'active':''}}">
                         <a class="nav-link" href="{{route('beritafront.index')}}">Berita</a>
                     </li>
-                    <li class="nav-item dropdown {{Request::segment(1)=="siaran-pers"?'active':'' ||Request::segment(1)=="dokumen"?'active':''}}">
+                    <li class="nav-item dropdown {{Request::segment(1)=="siaran-pers"?'active':''}}">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Publikasi</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">

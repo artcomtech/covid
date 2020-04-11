@@ -70,7 +70,7 @@
                 </li>
                 <li class="nav-item has-treeview ">
                     <a href="#"
-                        class="nav-link {{Request::segment(2)=="pers"?'active':'' || Request::segment(2)=="dokumen"?'active':''}}">
+                        class="nav-link {{Request::segment(2)=="pers"?'active':''}} {{ Request::segment(2)=="dokumen"?'active':''}}">
                         <i class="nav-icon fas fa-newspaper "></i>
                         <p>
                             Publikasi
@@ -96,7 +96,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#"
-                        class="nav-link {{Request::segment(2)=="footerimage"?'active':'' || Request::segment(2)=="kontak"?'active':''}}">
+                        class="nav-link {{Request::segment(2)=="footerimage"?'active':''}} {{Request::segment(2)=="kontak"?'active':''}}">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>
                             Pengaturan
@@ -120,17 +120,16 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="{{url('admin/logout')}}" class="nav-link">
-              <i class="nav-icon fas fa-sign-out-alt"></i>
-              <p>
-                Logout
-              </p>
-            </a>
            
-          </li>
+                <li class="nav-item">
+                    <a href="{{url('admin/logout')}}" class="nav-link">
+                    <i class="nav-icon fas fa-sign-out-alt"></i>
+                    <p>
+                        Logout
+                    </p>
+                    </a>
+                
+                </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
