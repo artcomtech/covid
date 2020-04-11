@@ -9,7 +9,8 @@
             <div class="row d-flex wellcome_c">
                 <div class="col-12 col-md-6 wellcome_c_m">
                     <h1 class="display-5 ">Lampung Barat <span class="font-weight-bold">Tanggap Covid-19</span></h1>
-                    <p>Hubungi Tim Beguai Jejama Lawan Covid-19 Kabupaten Lampung Barat <span class="font-weight-bold">#LambarHebat</span></p>
+                    <p>Hubungi Tim Beguai Jejama Lawan Covid-19 Kabupaten Lampung Barat <span
+                            class="font-weight-bold">#LambarHebat</span></p>
                     <a class="btn btn-sm btn-danger text-white waves-effect btn-icon-text"
                         href="https://api.whatsapp.com/send?phone=62{{empty($kontak->others)?'':$kontak->others}}">
                         <i class="fas fa-phone btn-icon-prepend fa-2x pr-3"></i>
@@ -26,7 +27,12 @@
                                 <div class="col-12 col-md-12 mx-auto mb-3 mt-3">
                                     <div class="col-12">
                                         <div class="alert alert-primary mt-4 text-center" role="alert">
-                                            Sumber Dinas Kesehatan Lambar. Data update {{\Carbon\Carbon::parse($covid->updated_at)->format('d M Y')}}
+                                            @php
+                                            \Carbon\Carbon::setLocale('id');
+                                            @endphp
+                                            Sumber Dinas Kesehatan Lambar. Data update
+                                            {{\Carbon\Carbon::parse($covid->updated_at)->format('d F Y H:i')}} WIB *Data
+                                            dapat berubah
                                         </div>
                                     </div>
                                     <div class="card text-center">
@@ -209,53 +215,16 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12">
-                <h2 class="text-center font-weight-bold mb-4 pb-2 text-primary wow fadeIn "> <a
-                        href="statistiksiapm.html">Pemantauan Pelaku Perjalanan Dari Luar Daerah</a></h2>
-                @php
-                \Carbon\Carbon::setLocale('id');
-                @endphp
-                @if (!empty($covid->updated_at))
-                <p class="text-center w-100">Update Terakhir :
-                    {{\Carbon\Carbon::parse($covid->updated_at)->format('d F Y H:i')}} WIB *Data dapat berubah
-                    sewaktu-waktu
-                </p>
-                @endif
-                <div class=" wow fadeIn ">
-                    <div class="p-0">
-                        <div class="row mx-0 wow zoomIn text-center">
-                            <div class="col-6 col-md-4 mx-auto mb-3 mt-3">
-                                <div class="card card-count">
-                                    <div class="card-body">
-                                        <i class="fas fa-car-side fa-3x text-primary"></i>
-                                        <p class="count-p" class="mb-0">Pelaku Perjalanan
-                                            <span
-                                                class="count indigo-text">{{empty($covid->jml_perjalanan)?0:$covid->jml_perjalanan}}</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4 mx-auto mb-3 mt-3">
-                                <div class="card card-count">
-                                    <div class="card-body">
-                                        <i class="fas fa-exclamation-triangle fa-3x indigo-text"></i>
-                                        <p class="count-p" class="mb-0">Masih Dalam Pemantauan
-                                            <span
-                                                class="count indigo-text">{{empty($covid->jml_pantau)?0:$covid->jml_pantau}}</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4 mx-auto mb-3 mt-3">
-                                <div class="card card-count">
-                                    <div class="card-body">
-                                        <i class="far fa-check-square fa-3x succes-text"></i>
-                                        <p class="count-p" class="mb-0">Selesai Dipantau 14 Hari
-                                            <span
-                                                class="count succes-text">{{empty($covid->jml_selesai)?0:$covid->jml_selesai}}</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="wow fadeIn ">
+                    <div class="row wow zoomIn text-center">
+                        <div class="col-md-6 mb-3 mt-3">
+                            <h4 class="font-weight-bold text-muted">Donasi Lewat Kaos</h4>
+                            <p >50% Keuntungan Akan dignakan untuk membantu warga yang terdampak covid-19 di Lampung Barat.</p>
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=6281373517128&text=Halo,%20saya%20ingin%20donasi%20Lewat%20Kaos" class="text-white  btn btn-sm btn-success">Donasi Sekarang</a>
+                        </div>
+                        <div class="col-md-6 mb-3 mt-3">
+                            <img src="{{ asset('images/donasi.jpeg') }}" class="img-fluid z-depth-1" width="350px"
+                                alt="Responsive image">
                         </div>
                     </div>
                 </div>
