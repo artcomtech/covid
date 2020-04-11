@@ -304,20 +304,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Agus Pramudi</td>
-                                        <td>Univ Lampung</td>
-                                        <td><a class="btn btn-sm btn-success" href="https://wa.me/"><i
-                                                    class="fab fa-whatsapp fa-2x"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Agus Pramudi</td>
-                                        <td>Univ Lampung</td>
-                                        <td><a class="btn btn-sm btn-success" href="https://wa.me/"><i
-                                                    class="fab fa-whatsapp fa-2x"></i></a></td>
-                                    </tr>
+                                    @php
+                                        $no = 1;
+                                    @endphp
+                                    @foreach ($kontakall as $item)
+                                        @php
+                                            $nomor = substr($item->others, 1, 12);
+                                        @endphp
+                                        <tr>
+                                            <th scope="row">{{$no}}</th>
+                                            <td>{{$item->title}}</td>
+                                            <td>{{$item->description}}</td>
+                                            <td><a class="btn btn-sm btn-success" href="https://api.whatsapp.com/send?phone=62{{$nomor}}" target="_blank"><i
+                                                        class="fab fa-whatsapp fa-2x"></i></a></td>
+                                        </tr>
+                                        @php
+                                            $no++;
+                                        @endphp
+                                    @endforeach
+                                   
                                 </tbody>
                             </table>
                             <div class="col-12">

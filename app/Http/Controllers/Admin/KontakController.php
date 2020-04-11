@@ -39,19 +39,31 @@ class KontakController extends Controller
      */
     public function store(Request $request)
     {
-        $kontak = Post::where('parent','kontak')->where('title', $request->title)->get();
-        if(count($kontak)==0){
+        if($request->subparent=='callcenter'){
+            $kontak = Post::where('parent','kontak')->where('subparent', $request->subparent)->get();
+            if(count($kontak)==0){
+                $kontak = new Post();
+                $kontak->parent = 'kontak';
+                $kontak->subparent = $request->subparent;
+                $kontak->title = $request->title;
+                $kontak->others = $request->nomor;
+                $kontak->save();
+
+                return redirect()->intended(url('admin/kontak'))->with('success','Kontak berhasil ditambahkan');
+            }else{
+                return redirect()->intended(url('admin/kontak'))->with('error','Kontak sudah ada');
+            }
+            
+        } else if($request->subparent!='callcenter'){
             $kontak = new Post();
             $kontak->parent = 'kontak';
+            $kontak->subparent = $request->subparent;
             $kontak->title = $request->title;
+            $kontak->description = $request->description;
             $kontak->others = $request->nomor;
             $kontak->save();
-
             return redirect()->intended(url('admin/kontak'))->with('success','Kontak berhasil ditambahkan');
-        }else{
-            return redirect()->intended(url('admin/kontak'))->with('error','Kontak sudah ada');
-        }
-        
+        }  
     }
 
     /**
@@ -96,6 +108,8 @@ class KontakController extends Controller
      */
     public function destroy($id)
     {
-        //
+       
+        $delete = Post::where('id', $id)->delete();
+        return redirect()->intended(url('admin/kontak'))->with('success','Kontak berhasil dihapus');
     }
 }

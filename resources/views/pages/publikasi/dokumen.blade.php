@@ -30,33 +30,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $no=1;
+                        @endphp
+                        @foreach ($dokumen as $item)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Kamis, 9 April 2020</td>
-                            <td><a class="text-primary font-weight-bold" href="#">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing
-                                    elit. Exercitationem animi aperiam placeat, sit ipsa adipisci voluptas mollitia
-                                    tenetur quo vitae,
-                                    rerum cumque maxime, repellendus dolor nobis! Unde non mollitia est.</a></td>
+                            <th scope="row">{{$no}}</th>
+                            <td>{{\Carbon\Carbon::parse($item->updated_at)->format('d, M Y')}}</td>
+                            <td><a class="text-primary font-weight-bold" href="{{url('dokumen/'.$item->file)}}">{{$item->title}}</a></td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Kamis, 9 April 2020</td>
-                            <td><a class="text-primary font-weight-bold" href="#">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing
-                                    elit. Exercitationem animi aperiam placeat, sit ipsa adipisci voluptas mollitia
-                                    tenetur quo vitae,
-                                    rerum cumque maxime, repellendus dolor nobis! Unde non mollitia est.</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Kamis, 9 April 2020</td>
-                            <td><a class="text-primary font-weight-bold" href="#">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing
-                                    elit. Exercitationem animi aperiam placeat, sit ipsa adipisci voluptas mollitia
-                                    tenetur quo vitae,
-                                    rerum cumque maxime, repellendus dolor nobis! Unde non mollitia est.</a></td>
-                        </tr>
+                            @php
+                                $no++;
+                            @endphp
+                        @endforeach
+                       
+                       
                     </tbody>
                 </table>
             </div>

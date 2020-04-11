@@ -18,7 +18,8 @@ Route::get('/faq', 'Frontend\FaqController@index')->name('faq');
 Route::get('berita','Frontend\BeritaController@index')->name('beritafront.index');
 Route::get('berita/{berita}','Frontend\BeritaController@show')->name('beritafront.detail');
 Route::get('siaran-pers','Frontend\SampleController@pers')->name('pers.index');
-Route::get('infografik','Frontend\SampleController@infografik')->name('infografik.index');
+Route::get('infografik','Frontend\InfografikController@index')->name('infografik.index');
+Route::get('infografik/{id}','Frontend\InfografikController@show')->name('infografik.show');
 Route::get('pencegahan','Frontend\SampleController@pencegahan')->name('pencegahan.index');
-Route::get('dokumen','Frontend\SampleController@dokumen')->name('dokumen.index');
-
+Route::get('dokumen','Frontend\DokumenController@index')->name('dokumen.index');
+Route::get('dokumen/{id}','Frontend\DokumenController@show')->name('dokumen.show');

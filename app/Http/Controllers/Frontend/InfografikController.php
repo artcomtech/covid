@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 use App\Model\Post;
 
-class DokumenController extends Controller
+class InfografikController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,9 @@ class DokumenController extends Controller
      */
     public function index()
     {
-        $title = 'Data Dokumen';
-        $data = Post::where('parent','dokumen')->get();
-        return view('admin.dokumen.index',['title'=>$title,'data'=>$data]);
+        $footer = Post::where('parent','footer')->get();
+        $infografik = Post::where('parent', 'infografik')->get();
+        return view('/pages/infografik/index',['footer'=>$footer,'infografik'=>$infografik]);
     }
 
     /**
@@ -39,20 +40,7 @@ class DokumenController extends Controller
      */
     public function store(Request $request)
     {
-        $dokumen = new Post();
-        $dokumen->parent = 'dokumen';
-        $dokumen->subparent = '';
-        $dokumen->title = $request->title;
-        $image = $request->file('file');
-        $input['file'] = time().'.pdf';
-     
-        $destinationPath = public_path('/file');
-        $image->move($destinationPath, $input['file']);
-
-       $dokumen->file =  $input['file'];
-       $dokumen->save();
-
-        return redirect()->intended(url('admin/dokumen'))->with('success','Dokumen berhasil ditambahkan');
+        //
     }
 
     /**
@@ -61,9 +49,11 @@ class DokumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($file)
     {
-        //
+        $filepath = public_path('images/post/').$file;
+        return response()->download($filepath);
+       
     }
 
     /**
@@ -97,12 +87,6 @@ class DokumenController extends Controller
      */
     public function destroy($id)
     {
-        $dtpost = Post::find($id);
-        if(\File::exists(public_path('file/'.$dtpost->file))){
-
-            \File::delete(public_path('file/'.$dtpost->file));
-        }
-        $delete = Post::where('id', $id)->delete();
-        return redirect()->intended(url('admin/dokumen'))->with('success','Dokumen berhasil dihapus');
+        //
     }
 }
