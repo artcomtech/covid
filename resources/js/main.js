@@ -52748,7 +52748,7 @@ if(typeof module === "object" && module.exports) {
       .find('[data-action="collapse"]')
       .toggleClass("rotate");
   });
-  
+
   $('[data-toggle="tooltip"]').tooltip()
   // Toggle fullscreen
   $('a[data-action="expand"]').on("click", function (e) {
@@ -52875,14 +52875,14 @@ if(typeof module === "object" && module.exports) {
   $(".prev-portofolio").click(function () {
     owl.trigger("prev.owl.carousel");
   });
-  var script = document.createElement('script');
-  script.onload = function () {
-    //do stuff with the script
-  };
-  script.src = "https://widget.kominfo.go.id/gpr-widget-kominfo.min.js";
-
-  document.body.appendChild(script);
-
+  if ($('#gpr-kominfo-widget-container').length > 0) {
+    var script = document.createElement('script');
+    script.onload = function () {
+      //do stuff with the script
+    };
+    script.src = "https://widget.kominfo.go.id/gpr-widget-kominfo.min.js";
+    document.body.appendChild(script);
+  }
   if ($('#screensaver').length > 0) {
     $(document).ready(function () {
       var mousetimeout;
