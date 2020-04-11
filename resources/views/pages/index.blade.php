@@ -9,12 +9,12 @@
             <div class="row d-flex wellcome_c">
                 <div class="col-12 col-md-6 wellcome_c_m">
                     <h1 class="display-5 ">Lampung Barat <span class="font-weight-bold">Tanggap Covid-19</span></h1>
-                    <p>Hubungi Call Center Gugus Tugas Penanggulangan Covid-19 Kabupaten Lampung Barat </p>
+                    <p>Hubungi Tim Beguai Jejama Lawan Covid-19 Kabupaten Lampung Barat <span class="font-weight-bold">#LambarHebat</span></p>
                     <a class="btn btn-sm btn-danger text-white waves-effect btn-icon-text"
                         href="https://api.whatsapp.com/send?phone=62{{empty($kontak->others)?'':$kontak->others}}">
                         <i class="fas fa-phone btn-icon-prepend fa-2x pr-3"></i>
                         <span class="d-inline-block text-left">
-                            <small class="d-block">Call Center</small> {{empty($kontak->others)?'':$kontak->others}}
+                            <small class="d-block">Laporan Warga</small> {{empty($kontak->others)?'':$kontak->others}}
                         </span>
                     </a>
                 </div>
@@ -24,6 +24,11 @@
                             <div class="row mx-0 wow zoomIn">
 
                                 <div class="col-12 col-md-12 mx-auto mb-3 mt-3">
+                                    <div class="col-12">
+                                        <div class="alert alert-primary mt-4 text-center" role="alert">
+                                            Sumber Dinas Kesehatan Lambar. Data update {{\Carbon\Carbon::parse($covid->updated_at)->format('d M Y')}}
+                                        </div>
+                                    </div>
                                     <div class="card text-center">
                                         <div class="card-header secondary-color">
                                             Orang Tanpa Gejala (OTG)

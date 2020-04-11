@@ -29,12 +29,18 @@
       </div>
     </div>
   </div>
-  <div class="sidebar-item z-depth-1" id="gpr-kominfo-widget-container"></div>
   <div class="sidebar-item card">
-    <div class="card-header">Sample Widget</div>
-    <div class="card-body">
-      <!-- Content Widget Here-->
+    <div class="card-header">Donasi Lewat Kaos</div>
+    <div class="card-body text-center p-0">
+        <div class="card-title ">
+            <img class="card-img-top img-fluid"
+              src="{{ asset('images/donasi.jpeg') }}"
+              alt="Card image cap">
+        </div>
+        <div class="card-footer">
+            <a target="_blank" href="https://api.whatsapp.com/send?phone=6281373517128&text=Halo,%20saya%20ingin%20donasi%20covid" class="text-white w-100 btn btn-sm btn-success">Donasi Sekarang</a>
+        </div>
     </div>
   </div>
-
+  <div class="sidebar-item z-depth-1" id="gpr-kominfo-widget-container"></div>
 </aside>

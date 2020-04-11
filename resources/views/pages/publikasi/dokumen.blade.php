@@ -12,8 +12,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">FAQ</a></li>
-                            <li class="breadcrumb-item active">Data</li>
+                            <li class="breadcrumb-item active">@yield('title')</li>
                         </ol>
                     </nav>
                 </div>
@@ -43,8 +42,8 @@
                                 $no++;
                             @endphp
                         @endforeach
-                       
-                       
+
+
                     </tbody>
                 </table>
             </div>

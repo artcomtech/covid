@@ -11,13 +11,13 @@
                 class="img-fluid px-4 img-sm" alt="{{$item->title}}">
             </a>
           </div>
-        </div>  
+        </div>
       @endforeach
-        
+
       </div>
     </div>
   </div>
   <div class="footer-copyright py-3 text-center">
-    <a href="https://pustakadigital.co.id">Pemerintah Kabupaten lampung Barat</a>
+    <a href="https://coronalampungbarat.id/">coronalampungbarat.id</a>
   </div>
 </footer>

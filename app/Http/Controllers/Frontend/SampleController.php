@@ -25,6 +25,11 @@ class SampleController extends Controller
         $footer = Post::where('parent','footer')->get();
         return view('/pages/publikasi/pers',['footer'=>$footer]);
     }
+    public function laporan()
+    {
+        $footer = Post::where('parent','footer')->get();
+        return view('/pages/publikasi/laporan',['footer'=>$footer]);
+    }
     public function pencegahan()
     {
         $footer = Post::where('parent','footer')->get();

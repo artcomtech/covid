@@ -12,8 +12,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Library</a></li>
-              <li class="breadcrumb-item active">Data</li>
+              <li class="breadcrumb-item active">@yield('title')</li>
             </ol>
           </nav>
         </div>
@@ -51,7 +50,7 @@
           @endforeach
 
         </div>
-        
+
         <hr class="mt-3">
         {{-- <div class="row justify-content-center mt-3 mb-4">
           <nav class="mb-4">
@@ -70,8 +69,8 @@
                 <a class="page-link waves-effect waves-effect">{{$i}}</a>
               </li>
               @endfor
-             
-            
+
+
               <li class="page-item">
                 <a href="{{$berita->ext_page_url}}" class="page-link waves-effect waves-effect" aria-label="Next">
                   <span aria-hidden="true">»</span>

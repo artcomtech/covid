@@ -1,6 +1,6 @@
 @extends('default')
 
-@section('title', 'Pencegahan')
+@section('title', 'Laporan Donasi')
 
 @section('content')
 <section class="main-content section">
