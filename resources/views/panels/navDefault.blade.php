@@ -14,10 +14,13 @@
                     <li class="nav-item {{empty(Request::segment(1))?'active':''}}">
                         <a class="nav-link" href="{{url('/')}}">Beranda</a>
                     </li>
+                    <li class="nav-item {{Request::segment(1)=="pencegahan"?'active':''}}">
+                        <a class="nav-link" href="{{url('/pencegahan')}}">Pencegahan</a>
+                    </li>
                     <li class="nav-item {{Request::segment(1)=="berita"?'active':''}}">
                         <a class="nav-link" href="{{route('beritafront.index')}}">Berita</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown {{Request::segment(1)=="siaran-pers"?'active':'' ||Request::segment(1)=="dokumen"?'active':''}}">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Publikasi</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
@@ -28,9 +31,7 @@
                     <li class="nav-item {{Request::segment(1)=="infografik"?'active':''}}">
                         <a class="nav-link" href="{{url('/infografik')}}">Infografik</a>
                     </li>
-                    <li class="nav-item {{Request::segment(1)=="pencegahan"?'active':''}}">
-                        <a class="nav-link" href="{{url('/pencegahan')}}">Pencegahan</a>
-                    </li>
+
                     <li class="nav-item {{Request::segment(1)=="faq"?'active':''}}">
                         <a class="nav-link" href="{{url('/faq')}}">FAQ</a>
                     </li>
@@ -39,7 +40,7 @@
 
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                        <a href="" class="btn btn-danger btn-sm waves-effect rounded waves-effect mr-2" target="_blank">
+                        <a href="tel:08117222003" class="btn btn-danger btn-sm waves-effect rounded waves-effect mr-2" target="_blank">
                             <i class="fas fa-phone mr-1"></i> Call Center
                         </a>
                     </li>

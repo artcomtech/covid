@@ -6615,8 +6615,14 @@ a.text-info:hover, a.text-info:focus {
 }
 
 /* line 6, node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
+.text-warning {
+  color: #ffc107 !important;
+}
 
 /* line 17, node_modules/bootstrap/scss/mixins/_hover.scss */
+a.text-warning:hover, a.text-warning:focus {
+  color: #ba8b00 !important;
+}
 
 /* line 6, node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
 .text-danger {
@@ -12433,8 +12439,14 @@ a.text-danger:hover, a.text-danger:focus {
 }
 
 /* line 132, src/assets/scss/core/_mixins.scss */
+.text-warning {
+  color: #fb3 !important;
+}
 
 /* line 110, src/assets/scss/core/_mixins.scss */
+a.text-warning:hover, a.text-warning:focus {
+  color: #ffaa00 !important;
+}
 
 /* line 132, src/assets/scss/core/_mixins.scss */
 .text-success {
